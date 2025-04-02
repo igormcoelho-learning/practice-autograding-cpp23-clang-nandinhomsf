@@ -16,8 +16,8 @@ project(autograding_project VERSION 0.1.0 LANGUAGES CXX)
 add_library(student)
 target_sources(student  PUBLIC  FILE_SET CXX_MODULES FILES   src/student.cppm)
 
-add_library(ut_module)
-target_sources(ut_module  PUBLIC  FILE_SET CXX_MODULES FILES   thirdparty/boost/include/ut.cppm)
+#add_library(ut_module)
+#target_sources(ut_module  PUBLIC  FILE_SET CXX_MODULES FILES   thirdparty/boost/include/ut.cppm)
 
 #==========
 #  TESTS
@@ -28,4 +28,4 @@ FetchContent_Declare(ut GIT_REPOSITORY https://github.com/boost-ext/ut.git GIT_C
 FetchContent_MakeAvailable(ut)
 #
 add_executable(app_tests tests/tests.cpp)
-target_link_libraries(app_tests PRIVATE student ut_module)
+target_link_libraries(app_tests PRIVATE student)
