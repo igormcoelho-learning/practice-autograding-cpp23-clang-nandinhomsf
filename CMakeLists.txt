@@ -28,4 +28,4 @@ FetchContent_Declare(ut GIT_REPOSITORY https://github.com/boost-ext/ut.git GIT_C
 FetchContent_MakeAvailable(ut)
 #
 add_executable(app_tests tests/tests.cpp)
-target_link_libraries(app_tests PRIVATE student)
+target_link_libraries(app_tests PRIVATE student ut_module)
